@@ -2,6 +2,9 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
+  <link rel="canonical" href="https://xn--trkiyehacamatkursu-m6b.com/" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hacamat & Sülük Kursu | 26 Yıllık Tecrübe</title>
   <meta name="description" content="Türkiye'nin en köklü hacamat ve sülük eğitim merkezi. 26 yıllık tecrübe ile bire bir uygulamalı, yüz yüze hacamat ve sülük kursu. Hemen kayıt olun!" />
@@ -1486,7 +1489,7 @@
 
   <!-- ===== NAVIGATION ===== -->
   <nav id="mainNav">
-    <a href="#" class="nav-logo">
+    <a href="https://xn--trkiyehacamatkursu-m6b.com/" class="nav-logo">
       <div class="nav-logo-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10" stroke-width="1.5" opacity="0.9"></circle>
@@ -1501,7 +1504,7 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="#anasayfa">Anasayfa</a></li>
+      <li><a href="https://xn--trkiyehacamatkursu-m6b.com/">Anasayfa</a></li>
       <li><a href="#hakkimizda">Hakkımızda</a></li>
       <li><a href="#kurslar">Kurslar</a></li>
       <li><a href="galeri.html">Galeri</a></li>
@@ -1523,7 +1526,7 @@
 
   <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobileNav">
-    <a href="#anasayfa" onclick="closeMobileNav()">Anasayfa</a>
+    <a href="https://xn--trkiyehacamatkursu-m6b.com/" onclick="closeMobileNav()">Anasayfa</a>
     <a href="#hakkimizda" onclick="closeMobileNav()">Hakkımızda</a>
     <a href="#kurslar" onclick="closeMobileNav()">Kurslar</a>
     <a href="galeri.html">Galeri</a>
@@ -2238,7 +2241,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="#" class="nav-logo">
+          <a href="https://xn--trkiyehacamatkursu-m6b.com/" class="nav-logo">
             <div class="nav-logo-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10" stroke-width="1.5" opacity="0.9"></circle>
@@ -2263,9 +2266,9 @@
         <div class="footer-col">
           <h4>Sayfalar</h4>
           <ul>
-            <li><a href="#anasayfa">Anasayfa</a></li>
+            <li><a href="https://xn--trkiyehacamatkursu-m6b.com/">Anasayfa</a></li>
             <li><a href="#hakkimizda">Hakkımızda</a></li>
-            <li><a href="#kurslar">Kurslarımız</a></li>
+            <li><a href="#kurslar">Kurslarımıza</a></li>
             <li><a href="#yorumlar">Yorumlar</a></li>
             <li><a href="#iletisim">İletişim</a></li>
           </ul>
@@ -2419,12 +2422,22 @@
     reveals.forEach(el => revealObserver.observe(el));
 
     // ===== SMOOTH SCROLL =====
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
+    document.querySelectorAll('a[href^="#"], a[href="https://xn--trkiyehacamatkursu-m6b.com/"]').forEach(a => {
       a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const href = a.getAttribute('href');
+        if (href === 'https://xn--trkiyehacamatkursu-m6b.com/') {
+          const target = document.getElementById('anasayfa');
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.pushState(null, null, ' ');
+          }
+        } else {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       });
     });
